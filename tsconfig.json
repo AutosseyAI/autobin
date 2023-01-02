@@ -1,0 +1,10 @@
+{
+  "extends": "@autosoft/tsconfig",
+  "compilerOptions": {
+    "outDir": ".auto/build"
+  },
+  "files": [
+    "source/index.ts",
+    "source/bin/index.ts"
+  ]
+}
