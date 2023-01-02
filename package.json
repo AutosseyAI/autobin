@@ -26,8 +26,7 @@
     "autobin": ".auto/build/bin/index.js"
   },
   "files": [
-    ".auto/build/**/*.js",
-    ".auto/build/**/*.d.ts"
+    ".auto/build/**/!(tsconfig.tsbuildinfo)"
   ],
   "scripts": {
     "build": "tsc --project ./tsconfig.json --incremental",
