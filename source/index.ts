@@ -1,3 +1,4 @@
+import { resolve } from "node:path";
 import clee from "clee";
 import { getPackageJSON } from "@bconnorwhite/package";
 import { readFile } from "read-file-safe";
@@ -33,7 +34,12 @@ export const autobin = clee("autobin")
   .action(async (options) => {
     const pkg = await getPackageJSON().read();
     if(pkg?.bin) {
-      const promises = Object.values(pkg.bin).map(async (bin) => {
+      // Use resolve to ensure that equivalent paths are the same.
+      const paths = Object.values(pkg.bin).map((bin) => resolve(bin));
+      // Use a set to remove duplicates.
+      const set = new Set(paths);
+      // Process each bin file.
+      const promises = [...set].map(async (bin) => {
         const buffer = await readFile(bin, { buffer: true });
         if(buffer !== undefined && !isHashbang(buffer.toString())) {
           await writeFile(bin, `${options.hashbang ?? nodeHashbang}\n${buffer}`);
