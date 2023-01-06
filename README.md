@@ -24,7 +24,22 @@ _DM me on [Twitter](https://twitter.com/bconnorwhite) if you have questions or s
 
 ---
 
-This package searches for each file in the `bin` field of your `package.json`, prepends the Node shebang to the file if it doesn't already have one, and makes each file executable.
+## About
+
+### Hashbang
+
+Bin scripts require a hashbang to run properly:
+```js
+#!/usr/bin/env node
+```
+
+However, if you're using TypeScript, you'll need to compile to JavaScript before publishing.
+
+This package searches for each file in the `bin` field of your `package.json`, and prepends the Node shebang to the file if it doesn't already have one.
+
+### Executable Bits
+
+Additionally, autobin sets the executable bits on the file. Although this is not required as package managers set the executable bits when installing, it allows you to run the script directly before publishing.
 
 ## Installation
 
@@ -42,6 +57,8 @@ pnpm add --save-dev autobin
 
 ## Usage
 
+### Package Scripts
+
 In your `package.json` file:
 
 ```json
@@ -51,6 +68,10 @@ In your `package.json` file:
   }
 }
 ```
+
+> The "postbuild" script automatically runs after the "build" script is run.
+
+### Command Line
 
 Alternatively, you can run `autobin` directly from the command line:
 
@@ -68,6 +89,21 @@ pnpm run autobin
 
 <br />
 
+---
+
+<br />
+
+<div align="center">
+  <b>Have fun! 🎉</b>
+</div>
+
+<br />
+
+---
+
+<br />
+
+
 <h2 id="dependencies">Dependencies<a href="https://www.npmjs.com/package/autobin?activeTab=dependencies"><img align="right" alt="dependencies" src="https://img.shields.io/librariesio/release/npm/autobin.svg"></a></h2>
 
 - [@bconnorwhite/package](https://www.npmjs.com/package/@bconnorwhite/package): A utility for reading package.json of a project, and forming paths relative to it.
@@ -84,7 +120,12 @@ pnpm run autobin
 
 <br />
 
-
 <h2 id="license">License <a href="https://opensource.org/licenses/MIT"><img align="right" alt="license" src="https://img.shields.io/npm/l/autobin.svg"></a></h2>
 
-[MIT](https://opensource.org/licenses/MIT)
+[MIT](https://opensource.org/licenses/MIT) - _The MIT License_
+
+<br />
+
+<h2 id="see-also">See Also</h2>
+
+- [autorepo](https://www.npmjs.com/package/autorepo): Autorepo abstracts away your dev dependencies, providing a single command to run all of your scripts.
