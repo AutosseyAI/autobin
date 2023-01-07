@@ -1,6 +1,6 @@
 import { resolve } from "node:path";
 import clee from "clee";
-import { getPackageJSON } from "@bconnorwhite/package";
+import { root, packageJSONFile } from "file-structure";
 import { readFile } from "read-file-safe";
 import { writeFile } from "write-file-safe";
 import { makeExecutable } from "make-executable";
@@ -32,7 +32,9 @@ export const autobin = clee("autobin")
   .description("Add a hashbang and make each bin file executable.")
   .option("--hashbang", "[hashbang]", "The hashbang to use.", parseHashbang)
   .action(async (options) => {
-    const pkg = await getPackageJSON().read();
+    const pkg = await root({
+      pkgJSON: packageJSONFile("package.json")
+    }).files().pkgJSON.read();
     if(pkg?.bin) {
       // Use resolve to ensure that equivalent paths are the same.
       const paths = Object.values(pkg.bin).map((bin) => resolve(bin));
