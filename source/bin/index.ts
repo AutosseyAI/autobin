@@ -1,3 +1,5 @@
 import { autobin } from "../index.js";
 
-autobin.parse();
+autobin
+  .version(import.meta.url)
+  .parse();
