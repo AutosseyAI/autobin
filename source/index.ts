@@ -13,16 +13,12 @@ function getHashbang(string: string): Hashbang {
   return `${hashbangPrefix}${string}`;
 }
 
-function isHashbang(string: string): string is Hashbang {
-  return string.startsWith(hashbangPrefix);
+function isHashbang(string: string | undefined): string is Hashbang {
+  return string?.startsWith(hashbangPrefix) ?? false;
 }
 
-function parseHashbang(string: string): Hashbang | undefined {
-  if(isHashbang(string)) {
-    return string;
-  } else {
-    return undefined;
-  }
+function parseHashbang(string: string | undefined): Hashbang | undefined {
+  return isHashbang(string) ? string : undefined;
 }
 
 const nodeHashbang = getHashbang("/usr/bin/env node");
@@ -30,7 +26,7 @@ const nodeHashbang = getHashbang("/usr/bin/env node");
 export const autobin = clee("autobin")
   .title({ font: "Slant" })
   .description("Add a hashbang and make each bin file executable.")
-  .option("--hashbang", "[hashbang]", "The hashbang to use.", parseHashbang)
+  .option("--hashbang", "The hashbang to use.", parseHashbang)
   .action(async (options) => {
     const pkg = await root({
       pkgJSON: packageJSONFile("package.json")

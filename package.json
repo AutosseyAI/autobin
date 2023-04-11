@@ -40,7 +40,7 @@
     "release": "yarn version"
   },
   "dependencies": {
-    "clee": "^0.2.3",
+    "clee": "^0.2.5",
     "file-structure": "^1.6.2",
     "make-executable": "^2.0.2",
     "read-file-safe": "^1.0.10",
