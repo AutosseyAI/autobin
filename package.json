@@ -2,14 +2,15 @@
   "name": "autobin",
   "version": "1.1.0",
   "description": "Prepare bin scripts for publishing.",
-  "main": ".auto/build/index.js",
-  "author": "Connor White",
   "license": "MIT",
   "private": false,
-  "type": "module",
+  "author": "Connor White",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/autosoftoss/autobin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/autosoftoss/autobin/issues"
   },
   "keywords": [
     "bin",
@@ -20,6 +21,8 @@
     "autosoft",
     "autorepo"
   ],
+  "type": "module",
+  "main": ".auto/build/index.js",
   "exports": "./.auto/build/index.js",
   "types": ".auto/build/index.d.ts",
   "bin": {
