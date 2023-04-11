@@ -37,7 +37,7 @@
     "lint": "eslint source --ext .ts && npmPkgJsonLint .",
     "postbuild": "yarn dev",
     "prepack": "yarn build",
-    "release": "yarn version"
+    "release": "yarn version && git push && git push --tags"
   },
   "dependencies": {
     "clee": "^0.2.5",
