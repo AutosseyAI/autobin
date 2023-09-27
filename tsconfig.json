@@ -1,5 +1,5 @@
 {
-  "extends": "@autosoft/tsconfig",
+  "extends": "@autosoft/tsconfig/node-18",
   "compilerOptions": {
     "outDir": ".auto/build"
   },

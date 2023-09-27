@@ -12,7 +12,7 @@
 
 <blockquote align="center">Prepare bin scripts for publishing.</blockquote>
 
-_If I should maintain this repo, please ⭐️_
+_If you find this repo useful, stars are appreciated ⭐️_
 <a href="https://github.com/autosoftoss/autobin">
   <img align="right" alt="GitHub stars" src="https://img.shields.io/github/stars/autosoftoss/autobin?label=%E2%AD%90%EF%B8%8F&style=social">
 </a>
