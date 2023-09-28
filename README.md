@@ -114,8 +114,8 @@ pnpm run autobin
 
 <h3 id="dev-dependencies">Dev Dependencies</h3>
 
-- [@autosoft/eslint-config](https://www.npmjs.com/package/@autosoft/eslint-config): A base for projects that use ESLint.
-- [@autosoft/tsconfig](https://www.npmjs.com/package/@autosoft/tsconfig): A base for TypeScript projects.
+- [@autossey/eslint-config](https://www.npmjs.com/package/@autossey/eslint-config): A base for projects that use ESLint.
+- [@autossey/tsconfig](https://www.npmjs.com/package/@autossey/tsconfig): A collection of base TSConfigs for various types of projects.
 - [npm-package-json-lint-config-auto](https://www.npmjs.com/package/npm-package-json-lint-config-auto): NPM Package.json Lint Config
 
 <br />
